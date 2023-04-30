@@ -1,27 +1,30 @@
-import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
-
-function App() {
-  return (
-    <BrowserRouter>
-      <header>
-        <nav className="navbar">
-          <h1>PracaSzukaRobala</h1>
-          <div className="links">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="about">About</NavLink>
-          </div>
-        </nav>
-      </header>
-      <main className="pages">
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </main>
-    </BrowserRouter>
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+import Home from "./pages/Home.js";
+import About from "./pages/About.js";
+import RootLayout from "./Layout/RootLayout.js";
+import HelpLayout from "./Layout/HelpLayout.js";
+import Faq from "./pages/help/Faq.js";
+import Contact from "./pages/help/Contact.js";
+import Page404 from "./pages/Page404.js";
+const App = () => {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="help" element={<HelpLayout />}>
+          <Route path="faq" element={<Faq />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+        <Route path="*" element={<Page404 />} />
+      </Route>
+    )
   );
-}
-
+  return <RouterProvider router={router} />;
+};
 export default App;
