@@ -32,14 +32,35 @@ button {
   flex-direction: row;
   justify-content: space-between;
 }
-.links > * {
+/* .links > * {
   margin: 5px;
-}
+} */
 .pages {
   margin: 1rem 0 1rem 0;
 }
+/* .active:hover {
+  transform: scale(1.1);
+  color: #7b84ae;
+  transition: all 0.2s ease-in-out; add a smooth transition effect
+} */
+header nav h1 {
+  border-bottom: 3px solid var(--primary);
+}
+header nav a {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+header nav a.active {
+  background: var(--primary);
+}
 /* page content */
-
+main {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 40px auto;
+}
 /* help layout */
 
 /* faq */
@@ -49,3 +70,22 @@ button {
 /* careers details */
 
 /* breadcrumbs */
+.links-help a {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+.links-help a.active {
+  background: var(--primary);
+}
+/* .page404 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.rowerek {
+  width: 60%;
+  height: auto;
+}
