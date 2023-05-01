@@ -57,19 +57,11 @@ header nav a.active {
 /* page content */
 main {
   display: flex;
-  justify-content: center;
-  max-width: 1200px;
+  justify-content: flex-start;
+  max-width: 100%;
   margin: 40px auto;
 }
-/* help layout */
 
-/* faq */
-
-/* careers list */
-
-/* careers details */
-
-/* breadcrumbs */
 .links-help a {
   text-decoration: none;
   padding: 6px;
@@ -78,14 +70,52 @@ main {
 .links-help a.active {
   background: var(--primary);
 }
-/* .page404 {
+.page404,
+.page404 > * {
   width: 100%;
   height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-} */
+  margin-top: 2rem;
+}
 .rowerek {
-  width: 60%;
+  width: 40%;
   height: auto;
 }
+.carrer-layout {
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+  /* border: 1px solid var(--primary); */
+}
+.carrer-layout h2 {
+  border-bottom: 1px solid var(--primary);
+}
+/* .carrer-layout * {
+  margin: 1rem 0 1rem 0;
+} */
+.job-display {
+  margin-top: 1rem;
+  padding: 0 1rem 0 1rem;
+  background-color: #252d46;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+.job-display a:hover {
+  color: var(--primary);
+}
+.job-display a {
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+}
+.job-display * {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0 10px 0;
+}
+/* .scrollable-container {
+  height: 200px;
+  overflow-y: scroll;
+} */
